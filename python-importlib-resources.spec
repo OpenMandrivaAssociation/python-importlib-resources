@@ -1,5 +1,5 @@
 Name:		python-importlib-resources
-Version:	6.5.2
+Version:	7.1.0
 Release:	1
 Summary:	Read resources from Python packages
 License:	Apache-2.0
@@ -17,6 +17,10 @@ BuildRequires:	python%{pyver}dist(setuptools-scm)
 %description
 Backport/standalone of importlib.resources. Aider still imports this
 module name.
+
+%build -p
+# The sdist is not a git checkout, so the versioning backend needs the version.
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 
 %files
 %doc README.rst
